@@ -520,7 +520,7 @@ class Effects4Images {
         $quality = round(($quality/100) * 9);
         $quality = abs(9 - $quality);
         
-        imagepng($this->processed_image(), $path, $quality):
+        imagepng($this->processed_image, $path, $quality);
         return $this; // Sonrasında "out" ile ekran çıktısı yapabilmek için gerekli.
     }
 
