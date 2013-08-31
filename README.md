@@ -259,6 +259,35 @@ try {
 }
 ?>
 ```
+
+### Resim Kaydetme
+Resim kaydetmek için bir dosya adı ve yol belirtmeniz yeterlidir. İsterseniz kalite de belirtebilirsiniz. Belirtebileceğiniz kaliteler:
+* Effects4Images::ULTRA
+* Effects4Images::BEST
+* Effects4Images::NORMAL
+* Effects4Images::LOW
+* Effects4Images::SCRAP
+`save` metodu ile kullanabilirsiniz. Örnek kod aşağıdadır.
+
+```php
+<?php
+include 'Effects4Images.php';
+try {
+	header('Content-Type:image/png');
+    $effects = new Effects4Images('http://www.hdwallpapers3d.com/wp-content/uploads/Top-Hd-Wallpapers-2.jpg');
+	$effects->setWatermark('http://files.kulturlupenguen.com/logo.png') // Watermark için bir PNG resim adresi.
+		->setWatermarkPosition(9) // Sağ altta olmasını istiyorum.
+		->doWatermark() // Watermark işlemini gerçekleştir.
+		->save('out.png',Effects4Images::ULTRA) // İkinci argüman opsiyoneldir.
+		->out(true); // Başka işlemler yapılabilir: Boyutlandırma, efekt verme vs.
+		
+} catch(EffectException $e) {
+	header('Content-Type:text/plain;charset="UTF-8"');
+    echo $e->getMessage();
+}
+?>
+```
+
 #### Notlar
 * Hoş efektler için, ilk önce `sharpen` filtresini uygulayıp ardından efekti uygularsanız daha güzel sonuç elde edersiniz.
 * Sınıf daha geliştirilme düzeyinde, sadece ekran çıktısı veriyor ama bunu geliştirmek sizin elinizde, `out` fonksiyonunu düzenleyerek yapabilirsiniz.
