@@ -524,8 +524,6 @@ class Effects4Images {
         return $this; // Sonrasında "out" ile ekran çıktısı yapabilmek için gerekli.
     }
 
-=======
->>>>>>> 630e1b4588c8a30fb8ff163bc8f1b7877ac85e4a
 }
 
 class EffectException extends Exception {
