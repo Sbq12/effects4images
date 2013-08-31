@@ -484,8 +484,7 @@ class Effects4Images {
             imagejpeg($this->processed_image,null,100);
         }
     }
-<<<<<<< HEAD
-    
+   
     public function save($path,$const = self::ULTRA) {
         $quality = null;
         switch($const) {
