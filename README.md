@@ -1,4 +1,4 @@
-[effects4images](http://www.penguencik.com/)
+[effects4images](http://www.penguencik.com/makale/resimlerinize-harika-efektler-veren-bir-php-sinifi-effects4images/)
 ==================================================
 
 # Effects4Images
